@@ -1,8 +1,8 @@
 let productos = [
-    {id: 1, nombre: "KEN-L", categoria: "perro", precio: 7000, img:"./imgs/kenL.png"},
-    {id: 3, nombre: "EXCELENT", categoria: "perro", precio: 9500, img:"./imgs/excellent.png"},
-    {id: 4, nombre: "CAT-CHOW", categoria: "gato", precio: 8000, img:"./imgs/catChow.png"},
-    {id: 2, nombre: "GATI", categoria: "gato", precio: 6500, img:"./imgs/gati.png"},
+    {id: 1, nombre: "KEN-L", categoria: "perro", precio: 7000, img:"./imgs/kenL.png", unidades:1},
+    {id: 3, nombre: "EXCELENT", categoria: "perro", precio: 9500, img:"./imgs/excellent.png", unidades:1},
+    {id: 4, nombre: "CAT-CHOW", categoria: "gato", precio: 8000, img:"./imgs/catChow.png", unidades:1},
+    {id: 2, nombre: "GATI", categoria: "gato", precio: 6500, img:"./imgs/gati.png", unidades:1},
 ]
 
 let productBox = document.querySelector("#productBox")
@@ -32,28 +32,26 @@ renderProductos()
 function add(e) {
     let id = e.target.id
     let productoSelec = productos.find(producto => producto.id == id)
-    carrito.push(productoSelec)
-    renderCarrito(carrito)
+    if(carrito.includes(productoSelec)){
+        let productRepetido = carrito.indexOf(productoSelec)
+        carrito[productRepetido].unidades++
+    }else(
+        carrito.push(productoSelec)
+    )
+    renderCarrito()
 }
 
-function renderCarrito(productosAdd) {
-    productosAdd.forEach(producto => {
+function renderCarrito() {
+    carritoBox.innerHTML = `<h2 class="m-3">Carrito:</h2>`
+    carrito.forEach(producto => {
         let carritoCard = document.createElement("div")
         carritoCard.classList.add("carrito")
-        
-        carritoCard.innerHTML += `
+        carritoCard.innerHTML +=`
         <h3>${producto.nombre}</h3>
-        <p>$${producto.precio}</p>
+        <p>${producto.unidades}</p>
         <img class="img" src=${producto.img} />
         `
         carritoBox.appendChild(carritoCard)
     })
 }
-
-
-
-
-
-
-
 
