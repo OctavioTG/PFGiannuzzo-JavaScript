@@ -1,15 +1,17 @@
 let productos = [
-    {id: 1, nombre: "KEN-L", categoria: "perro", precio: 7000, img:"./imgs/kenL.png", unidades:1},
-    {id: 3, nombre: "EXCELENT", categoria: "perro", precio: 9500, img:"./imgs/excellent.png", unidades:1},
-    {id: 4, nombre: "CAT-CHOW", categoria: "gato", precio: 8000, img:"./imgs/catChow.png", unidades:1},
-    {id: 2, nombre: "GATI", categoria: "gato", precio: 6500, img:"./imgs/gati.png", unidades:1},
+    {id: 1, nombre: "KEN-L", categoria: "perro", precio: 7000, img:"./imgs/kenL.png"},
+    {id: 3, nombre: "EXCELENT", categoria: "perro", precio: 9500, img:"./imgs/excellent.png"},
+    {id: 4, nombre: "CAT-CHOW", categoria: "gato", precio: 8000, img:"./imgs/catChow.png"},
+    {id: 2, nombre: "GATI", categoria: "gato", precio: 6500, img:"./imgs/gati.png"},
 ]
 
 let productBox = document.querySelector("#productBox")
 let carritoBox = document.querySelector("#carritoBox")
 
 let carrito = []
-console.log(carrito)
+if (localStorage.getItem("carrito")) {
+    let carritoEnJSON = localStorage.getItem("carrito")
+    carrito = JSON.parse(carritoEnJSON)}
 
 function renderProductos() {
     productos.forEach(producto => {
@@ -36,22 +38,38 @@ function add(e) {
         let productRepetido = carrito.indexOf(productoSelec)
         carrito[productRepetido].unidades++
     }else(
+        productoSelec.unidades = 1,
         carrito.push(productoSelec)
     )
+    localStorage.setItem("carrito", JSON.stringify(carrito))
     renderCarrito()
 }
 
 function renderCarrito() {
-    carritoBox.innerHTML = `<h2 class="m-3">Carrito:</h2>`
+    let totalCarrito = carrito.reduce((acum, carrito) => acum + carrito.unidades * carrito.precio, 0)
+    carritoBox.innerHTML = `
+    <h2 class="m-3">Carrito:</h2>
+    <p>Su Total es = $${totalCarrito}</p>
+    `
     carrito.forEach(producto => {
         let carritoCard = document.createElement("div")
-        carritoCard.classList.add("carrito")
+        carritoCard.classList.add("m-3")
         carritoCard.innerHTML +=`
-        <h3>${producto.nombre}</h3>
-        <p>${producto.unidades}</p>
-        <img class="img" src=${producto.img} />
+        <h5>${producto.nombre}</h5>
+        <p>Unidades:${producto.unidades}</p>
         `
         carritoBox.appendChild(carritoCard)
     })
+
 }
 
+let comprar = document.getElementById("comprar")
+comprar.addEventListener("click", finalizarCompra)
+
+function finalizarCompra() {
+    localStorage.removeItem("carrito")
+    carrito = []
+    renderCarrito()
+}
+
+console.log(carrito);
