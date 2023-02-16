@@ -1,15 +1,19 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Rubik', sans-serif;
+    font-family: "Rubik", sans-serif;
 }
 
-h1{
-    color: #3D3A34;
+h1 {
+    color: #3d3a34;
 }
 
-.header-section{
-    background-color: #F8C624;
+ul {
+    list-style: none;
+}
+
+.header-section {
+    background-color: #f8c624;
 }
 
 .logo {
@@ -17,20 +21,34 @@ h1{
     max-width: 3rem;
 }
 
-.row{
-    --bs-gutter-x: 0!important;
+.row {
+    --bs-gutter-x: 0 !important;
 }
 
-.img{
-    width: 300px;
+.img {
+    max-width: 300px;
     height: 300px;
 }
 
-.producto{
+.producto {
     display: inline;
 }
 
-/* BOTÓN */
+.main {
+    margin: 2rem !important;
+}
+
+.filtrosBox {
+    width: 18rem;
+    height: 20rem;
+}
+
+.boxCarrito {
+    width: 18rem;
+    height: auto;
+}
+
+/* BOTÓN AGREGAR CARRITO */
 .button {
     padding: 17px 40px;
     border-radius: 10px;
@@ -38,7 +56,7 @@ h1{
     background-color: rgb(255, 56, 86);
     letter-spacing: 1.5px;
     font-size: 15px;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     box-shadow: rgb(201, 46, 70) 0px 10px 0px 0px;
     color: hsl(0, 0%, 100%);
 }

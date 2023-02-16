@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "nombre": "KEN-L",
+        "edad": "adulto",
+        "categoria": "perro",
+        "precio": 7000,
+        "img": "./imgs/kenL.png"
+    },
+    {
+        "id": 8,
+        "nombre": "KEN-L",
+        "edad": "cachorro",
+        "categoria": "perro",
+        "precio": 7800,
+        "img": "./imgs/kenLCachorro.png"
+    },
+    {
+        "id": 2,
+        "nombre": "EXCELLENT",
+        "edad": "adulto",
+        "categoria": "perro",
+        "precio": 9500,
+        "img": "./imgs/excellent.png"
+    },
+    {
+        "id": 7,
+        "nombre": "EXCELLENT",
+        "edad": "cachorro",
+        "categoria": "perro",
+        "precio": 10200,
+        "img": "./imgs/excellentCachorro.png"
+    },
+    {
+        "id": 3,
+        "nombre": "CAT-CHOW",
+        "edad": "adulto",
+        "categoria": "gato",
+        "precio": 8000,
+        "img": "./imgs/catChow.png"
+    },
+    {
+        "id": 6,
+        "nombre": "CAT-CHOW",
+        "edad": "cachorro",
+        "categoria": "gato",
+        "precio": 9000,
+        "img": "./imgs/catChowGatito.png"
+    },
+    {
+        "id": 4,
+        "nombre": "GATI",
+        "edad": "adulto",
+        "categoria": "gato",
+        "precio": 6500,
+        "img": "./imgs/gati.png"
+    },
+    {
+        "id": 5,
+        "nombre": "WHISKAS",
+        "edad": "cachorro",
+        "categoria": "gato",
+        "precio": 7200,
+        "img": "./imgs/whiskas.png"
+    }
+]

@@ -1,38 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet" />
     <!-- BOOTSTRAP -->
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+    <!-- TOASTIFY -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <!-- SWEETALERT -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css" rel="stylesheet" />
 </head>
+
 <body>
     <header>
         <section class="header-section">
-                <div class="d-flex align-items-center justify-content-center">
-                    <h1 class="fw-bold m-3">ESPORA PETS</h1>
-                    <img class="logo" src="./imgs/logoBlack.png" alt="">
-                </div>
+            <div class="d-flex align-items-center justify-content-center">
+                <h1 class="fw-bold m-3">ESPORA PETS</h1>
+                <img class="logo" src="./imgs/logoBlack.png" alt="" />
+            </div>
         </section>
     </header>
-    <main>
-        <div class="d-flex" id="productBox"></div>
-        <div class="d-flex m-3" id="carritoBox"></div>
-        <button id="comprar">COMPRAR</button>
+    <main class="main row">
+        <section class="col d-flex align-self-start justify-content-center flex-wrap">
+            <div class="filtrosBox align-items-center border border-secondary-subtle p-3 m-3">
+                <div>
+                    <input type="text" id="buscador" class="form-control" placeholder="Buscar producto..." />
+                    <button class="btn btn-info" id="btnBuscador">BUCAR</button>
+                </div>
+                <div>
+                    <ul>
+                        <li class="p-2">
+                            <button class="btn btn-secondary" id="adulto">ADULTO</button>
+                        </li>
+                        <li class="p-2">
+                            <button class="btn btn-secondary" id="cachorro">CACHORRO</button>
+                        </li>
+                        <li class="p-2">
+                            <button class="btn btn-secondary" id="perro">PERRO</button>
+                        </li>
+                        <li class="p-2">
+                            <button class="btn btn-secondary" id="gato">GATO</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <article class="boxCarrito border border-secondary-subtle p-3 m-3">
+                <div class="d-block">
+                    <h2 class="m-3">Carrito:</h2>
+                    <div class="d-flex m-3 flex-wrap" id="carritoBox"></div>
+                    <button class="btn btn-secondary" id="comprar">COMPRAR</button>
+                    <button class="btn btn-secondary" id="vaciar">VACIAR</button>
+                </div>
+            </article>
+        </section>
+        <section class="col-9">
+            <div class="d-flex justify-content-around flex-wrap" id="productBox"></div>
+        </section>
     </main>
-    <footer>
-
-    </footer>
+    <footer></footer>
     <!-- BOOTSTRAP -->
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <!-- MAIN -->
     <script src="./script.js"></script>
+    <!-- TOASTIFY -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- SWEETALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+
 </html>
